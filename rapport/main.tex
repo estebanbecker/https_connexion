@@ -98,4 +98,20 @@ La clé publique est la suivante :
     \label{fig:Certificat}
 \end{figure}
 
+En déchiffrant la clé publique avec la ligne suivante :
+
+\begin{lstlisting}[language=Python]
+    cert = x509.load_pem_x509_certificate(pem_data[0].as_bytes(), default_backend())
+\end{lstlisting}
+
+On obtient les informations suivantes :
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\textwidth]{images/issuer.png}
+    \caption{Certificat déchiffré}
+    \label{fig:Issuer}
+\end{figure}
+
+
 \end{document}

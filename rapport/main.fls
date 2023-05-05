@@ -622,6 +622,13 @@ INPUT .\images\Certificat.png
 INPUT .\images\Certificat.png
 INPUT .\images\Certificat.png
 INPUT .\images\Certificat.png
+INPUT .\images\issuer.png
+INPUT .\images\issuer.png
+INPUT images\issuer.png
+INPUT .\images\issuer.png
+INPUT .\images\issuer.png
+INPUT .\images\issuer.png
+INPUT .\images\issuer.png
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out

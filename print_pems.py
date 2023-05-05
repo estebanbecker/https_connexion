@@ -7,6 +7,8 @@ Created on May 2022
 """
 
 import pem
+from cryptography import x509
+from cryptography.hazmat.backends import default_backend
 
 RESOURCES_DIR = "resources/"
 CA_PRIVATE_KEY_FILENAME = RESOURCES_DIR + "ca-private-key.pem"
@@ -17,15 +19,12 @@ SERVER_PUBLIC_KEY_FILENAME = RESOURCES_DIR + "server-public-key.pem"
 
 
 def print_perms(filename: str):
-    #print the content of the file
-    print(pem.parse_file(filename))
-    print("file content :")
-    with open(filename, 'r') as f:
-        print(f.read())
+    #print the content of the file and decode it
+    pem_data = pem.parse_file(filename)
 
-def uncrypte_perms(filename: str, password: str):
-    #print the content of the file
-    cert = pem.parse_file(filename, password=password)
-    print(cert)
+    cert = x509.load_pem_x509_certificate(pem_data[0].as_bytes(), default_backend())
+
+    print(cert.issuer)
+
 
     
